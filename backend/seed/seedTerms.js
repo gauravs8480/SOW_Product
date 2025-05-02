@@ -1,7 +1,8 @@
 // backend/seed/seedTerms.js
 import sequelize from '../config/db.js';
 import Terms from '../models/Terms.js';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const termsEn = [
   "By clicking Invoice Now, you choose to register according to the information that you have typed in and the text on the registration page and the terms here, and you at the same time accept the terms here.",
   "You can use the program FOR FREE for 14 days.",

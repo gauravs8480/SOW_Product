@@ -16,15 +16,16 @@
 }
 
 
-
-/* src/index.css or wherever your global CSS is */
 .goog-logo-link,
 .goog-te-gadget span {
   display: none !important;
 }
-
-#google_translate_element {
-  font-size: 14px;
-  margin-left: auto;
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
 }
+body {
+  top: 0px !important;
+}
+
+
 

@@ -72,7 +72,7 @@ const TermsandCondition = () => {
         <div className="text-center">
           <button
             onClick={() => navigate(-1)}
-            className="mt-6 px-6 py-2 bg-green-600 hover:bg-green-500 text-black font-semibold rounded-md transition"
+            className="mt-10 mb-10 px-6 py-2 bg-green-600 hover:bg-green-500 text-black font-semibold rounded-md transition"
           >
             {language === 'sv' ? 'Stäng och gå tillbaka' : 'Close and Go Back'}
           </button>

@@ -51,6 +51,9 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li className="font-normal cursor-pointer text-[16px] mr-10 text-black hover:underline">
+                <a href="/pricelist">{translate('Price List', 'Prislista')}</a>
+              </li>
             </ul>
 
             {/* Language Dropdown */}
