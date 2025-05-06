@@ -28,8 +28,9 @@ try {
 
   await app.listen({
     port: process.env.PORT || 3001,
-    host: '0.0.0.0' // 👈 Required for Railway / public cloud
+    host: '0.0.0.0', // ✅ THIS LINE IS REQUIRED ON RAILWAY
   });
+  console.log('✅ Server started successfully');  
 
   console.log(`🚀 Server running at http://localhost:${process.env.PORT || 3001}`);
 } catch (err) {
