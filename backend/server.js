@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import sequelize from './config/db.js';
-import productsRoutes from './routes/Products.js';
-import termsRoutes from './routes/terms.js'; // 👈 Add this line
+import productsRoutes from './routes/Products.js'; // optional
+import termsRoutes from './routes/terms.js';
 
 const app = Fastify({ logger: true });
 
@@ -15,16 +15,15 @@ await app.register(cors, {
 });
 
 await app.register(productsRoutes);
-await app.register(termsRoutes); // 👈 Add this line
+await app.register(termsRoutes);
 
 try {
   await sequelize.authenticate();
   await sequelize.sync();
   console.log('✅ Database connected and models synced');
 
-  await app.listen({ port: process.env.PORT || 3001 });
+  await app.listen({ port: process.env.PORT || 3001, host: '0.0.0.0' });
   console.log(`🚀 Server running at http://localhost:${process.env.PORT || 3001}`);
-  
 } catch (err) {
   console.error('❌ Server failed to start:', err);
 }
