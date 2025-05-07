@@ -1,7 +1,7 @@
 import Logo from "./Logo.png"
 import Bgwall from "./bgwall.jpg"
 import Flag1 from "./GBflag.png";
-import Flag2 from "./Seflag.png";
+import Flag2 from ".SEflag.png";
 export {
     Logo,
     Bgwall,
