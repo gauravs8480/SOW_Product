@@ -12,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<TermsandCondition />} />
         <Route path="/pricelist" element={<PriceList/>} /> {/* ✅ Add this */}
+        <Route path="*" element={<h2>404 - Page Not Found</h2>} />
       </Routes>
     </>
   );

@@ -25,9 +25,7 @@ const ProductTable = ({ products, onSelectProduct, onAddProduct }) => {
           <th className="px-4 py-2 hidden lg:table-cell">Unit</th>
           <th className="px-4 py-2 hidden lg:table-cell">In Stock</th>
           <th className="px-4 py-2 hidden xl:table-cell">Description</th>
-          <th className="px-4 py-2">
-            <span className="text-blue-500 font-bold cursor-pointer" onClick={onAddProduct}>+</span>
-          </th>
+          
         </tr>
       </thead>
       <tbody>
