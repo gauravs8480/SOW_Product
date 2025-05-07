@@ -2,7 +2,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 
-const Terms = sequelize.define('Terms', {
+const Terms = sequelize.define('terms', {
   language: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -11,6 +11,8 @@ const Terms = sequelize.define('Terms', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+}, {
+  timestamps: false,  // ❌ Disable createdAt and updatedAt
 });
 
 export default Terms;
