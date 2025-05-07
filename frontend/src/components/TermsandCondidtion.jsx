@@ -17,7 +17,7 @@ const TermsandCondition = () => {
       setLoading(true);
       setError(null);
       const response = await axios.get(
-        `http://sow-backend.vercel.app/api/terms?lang=${language}`
+        `http://sowbackend-production.up.railway.app/api/terms?lang=${language}`
       );
       setTerms(response.data);
     } catch (err) {
