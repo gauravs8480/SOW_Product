@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { navLinks } from '../constants';
 import { Logo, Flag1, Flag2 } from '../assets/Index';
 import LayoutWrapper from '../constants/LayoutWrapper';
@@ -33,7 +34,7 @@ const Navbar = () => {
 
   return (
     <LayoutWrapper>
-      <div  id="google_translate_element"  className="text-black bg-transparent relative z-[1]">
+      <div id="google_translate_element" className="text-black bg-transparent relative z-[1]">
         <nav className="w-full flex py-6 justify-between items-center relative">
           {/* Logo */}
           <div className="flex items-center">
@@ -48,11 +49,11 @@ const Navbar = () => {
                   key={nav.id}
                   className="font-normal cursor-pointer text-[16px] mr-10 text-black hover:underline"
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  <Link to={`/${nav.id}`}>{nav.title}</Link>
                 </li>
               ))}
               <li className="font-normal cursor-pointer text-[16px] mr-10 text-black hover:underline">
-                <a href="/pricelist">{translate('Price List', 'Prislista')}</a>
+                <Link to="/pricelist">{translate('Price List', 'Prislista')}</Link>
               </li>
             </ul>
 
