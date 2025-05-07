@@ -8,8 +8,9 @@ import { translateText } from "../utils/translate";
 import SideBar from "./SideBar";
 import { FaTrash } from "react-icons/fa";
 
-// ✅ Directly using your API URL
+// ✅ Auto-switching between HTTPS/HTTP based on environment
 const API_URL = "https://sowbackend-production.up.railway.app/api/products";
+const TERMS_API_URL = "https://sowbackend-production.up.railway.app/api/terms?lang=en";
 
 const PriceList = () => {
   const [products, setProducts] = useState([]);
@@ -43,7 +44,7 @@ const PriceList = () => {
     }
   };
 
-  // ✅ Search Products
+  // ✅ Search Products (Case-Insensitive)
   useEffect(() => {
     const filtered = products.filter(
       (p) =>
@@ -171,10 +172,10 @@ const PriceList = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <input name="article_no" placeholder="Article No" defaultValue={selectedProduct?.article_no || ""} required className="w-full border px-3 py-2" />
                     <input name="name" placeholder="Product Name" defaultValue={selectedProduct?.name || ""} required className="w-full border px-3 py-2" />
-                    <input name="in_price" type="number" min="0" placeholder="In Price" defaultValue={Math.max(0, selectedProduct?.in_price || 0)} required className="w-full border px-3 py-2" />
-                    <input name="price" type="number" min="0" placeholder="Price" defaultValue={Math.max(0, selectedProduct?.price || 0)} required className="w-full border px-3 py-2" />
+                    <input name="in_price" type="number" min="0" placeholder="In Price" defaultValue={selectedProduct?.in_price || 0} required className="w-full border px-3 py-2" />
+                    <input name="price" type="number" min="0" placeholder="Price" defaultValue={selectedProduct?.price || 0} required className="w-full border px-3 py-2" />
                     <input name="unit" placeholder="Unit" defaultValue={selectedProduct?.unit || ""} required className="w-full border px-3 py-2" />
-                    <input name="stock" type="number" min="0" placeholder="Stock" defaultValue={Math.max(0, selectedProduct?.stock || 0)} required className="w-full border px-3 py-2" />
+                    <input name="stock" type="number" min="0" placeholder="Stock" defaultValue={selectedProduct?.stock || 0} required className="w-full border px-3 py-2" />
                   </div>
                   <textarea name="description" placeholder="Description" defaultValue={selectedProduct?.description || ""} className="w-full border px-3 py-2 mt-2"></textarea>
                   <div className="mt-4 flex justify-end gap-3">
